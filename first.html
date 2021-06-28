@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title> React </title>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"> </script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"> </script>
+        <link rel="stylesheet" href="first.scss">
+    </head>
+
+    <body>
+        <h1> React </h1>
+        <div id="root" class="test" > wait... </div>
+        <script>
+            let dom = document.querySelector('#root');
+            let element = React.createElement(
+                'p', {}, 'Hello React!'
+            );
+            ReactDOM.render(element, dom);
+        </script>
+
+        <div class="space"></div>
+
+        <div id="root2" class="test" onclick="doCount();"> wait... </div>
+        <script>
+            let counter = 0;
+            let dom2 = document.querySelector("#root2");
+            doCount();
+
+            function doCount(){
+                counter++;
+                let element2 = React.createElement(
+                    'p', {}, "count: " + counter
+                );
+                ReactDOM.render(element2, dom2);
+            }
+        </script>
+    </body>
+</html>
